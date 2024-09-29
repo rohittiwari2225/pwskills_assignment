@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "python",
+      "display_name": "Python (Pyodide)",
+      "language": "python"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "python",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.8"
+    }
+  },
+  "nbformat_minor": 4,
+  "nbformat": 4,
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": "Q1. Create a python program to sort the given list of tuples based on integer value using a\nlambda function.\n[('Sachin Tendulkar', 34357), ('Ricky Ponting', 27483), ('Jack Kallis', 25534), ('Virat Kohli', 24936)]",
+      "metadata": {}
+    },
+    {
+      "cell_type": "code",
+      "source": "# Given list of tuples\nplayers = [('Sachin Tendulkar', 34357), ('Ricky Ponting', 27483), ('Jack Kallis', 25534), ('Virat Kohli', 24936)]\n\n# Sort the list of tuples based orn the second element (integer value)\nsorted_players = sorted(players, key=lambda x: x[1])\n\n# Print the sorted list\nfor player in sorted_players:\n    print(f\"{player}\")\n\n# Alternatively, one  can use a list comprehension:\n# sorted_players = sorted(players, key=lambda x: x[1])\n#print([(player, runs) for player, runs in sorted_players])\n\n\n",
+      "metadata": {
+        "trusted": true,
+        "scrolled": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "text": "('Virat Kohli', 24936)\n('Jack Kallis', 25534)\n('Ricky Ponting', 27483)\n('Sachin Tendulkar', 34357)\n",
+          "output_type": "stream"
+        }
+      ],
+      "execution_count": 21
+    },
+    {
+      "cell_type": "markdown",
+      "source": "Q2. Write a Python Program to find the squares of all the numbers in the given list of integers using\nlambda and map functions.\n[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
+      "metadata": {}
+    },
+    {
+      "cell_type": "code",
+      "source": "l=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nprint(list(map(lambda x:x**2,l)))",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "text": "[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n",
+          "output_type": "stream"
+        }
+      ],
+      "execution_count": 22
+    },
+    {
+      "cell_type": "markdown",
+      "source": "Q3. Write a python program to convert the given list of integers into a tuple of strings. Use map and\nlambda functions\nGiven String: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nExpected output: ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10')",
+      "metadata": {}
+    },
+    {
+      "cell_type": "code",
+      "source": "l=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nfor i in l:\n    p=tuple(map(lambda x:str(x),l))\nprint(p)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "text": "('1', '2', '3', '4', '5', '6', '7', '8', '9', '10')\n",
+          "output_type": "stream"
+        }
+      ],
+      "execution_count": 23
+    },
+    {
+      "cell_type": "markdown",
+      "source": "Q4. Write a python program using reduce function to compute the product of a list containing numbers\nfrom 1 to 25.",
+      "metadata": {}
+    },
+    {
+      "cell_type": "code",
+      "source": "l2=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]\nfrom functools import reduce\nprint(reduce(lambda x,y:x*y,l2))",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "text": "15511210043330985984000000\n",
+          "output_type": "stream"
+        }
+      ],
+      "execution_count": 24
+    },
+    {
+      "cell_type": "markdown",
+      "source": "Q5. Write a python program to filter the numbers in a given list that are divisible by 2 and 3 using the\nfilter function.\n[2, 3, 6, 9, 27, 60, 90, 120, 55, 46]",
+      "metadata": {}
+    },
+    {
+      "cell_type": "code",
+      "source": "l3=[2, 3, 6, 9, 27, 60, 90, 120, 55, 46] \na =list(filter(lambda x:x%2==0 and x%3==0,l3))\nprint(a)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "text": "[6, 60, 90, 120]\n",
+          "output_type": "stream"
+        }
+      ],
+      "execution_count": 19
+    },
+    {
+      "cell_type": "markdown",
+      "source": "Q6. Write a python program to find palindromes in the given list of strings using lambda and filter\nfunction.\n['python', 'php', 'aba', 'radar', 'level']",
+      "metadata": {}
+    },
+    {
+      "cell_type": "code",
+      "source": "l4=['python', 'php', 'aba', 'radar', 'level']\nl5=[]\nfor s in l5:\n    def is_palindrome(s):\n      return s == s[::-1]\n    if is_palindrome(s):\n        l6.append(s)\nprint(l6)\n    \n    ",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "text": "['php', 'aba', 'radar', 'level']\n",
+          "output_type": "stream"
+        }
+      ],
+      "execution_count": 20
+    },
+    {
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}
